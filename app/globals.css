@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-dark-gray font-inter;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply min-w-[180px] border border-dark-gray text-dark-gray bg-white px-6 py-2 rounded-full font-bold shadow-saas22-primary flex items-center justify-center transition-all duration-300 hover:shadow-none hover:bg-dark-gray hover:text-white;
+  }
+  
+  .btn-secondary {
+    @apply min-w-[180px] border border-dark-gray text-dark-gray bg-white px-6 py-2 rounded-full font-bold shadow-saas22-secondary flex items-center justify-center transition-all duration-300 hover:shadow-none hover:bg-dark-gray hover:text-white;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-saas22-card;
+  }
+  
+  .input-field {
+    @apply min-h-[37px] border border-light-gray rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-theme-blue focus:border-transparent;
+  }
+  
+  .select-field {
+    @apply min-h-[37px] border border-light-gray rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-theme-blue focus:border-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-sm;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-theme-blue via-theme-yellow to-theme-red rounded-sm;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(10px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
