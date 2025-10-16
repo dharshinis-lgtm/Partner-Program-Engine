@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ProgramTimeline, ProgramMilestone } from '@/lib/types'
+import { ProgramTimeline as ProgramTimelineType, ProgramMilestone } from '@/lib/types'
 import { CheckCircle, Clock, Play, Calendar, Target, Users, Award, TrendingUp } from 'lucide-react'
 
 interface ProgramTimelineProps {
@@ -9,13 +9,13 @@ interface ProgramTimelineProps {
 }
 
 export default function ProgramTimeline({ programId }: ProgramTimelineProps) {
-  const [timeline, setTimeline] = useState<ProgramTimeline | null>(null)
+  const [timeline, setTimeline] = useState<ProgramTimelineType | null>(null)
   const [viewMode, setViewMode] = useState<'timeline' | 'ladder'>('timeline')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     // Mock timeline data - in real app, this would come from API
-    const mockTimeline: ProgramTimeline = {
+    const mockTimeline: ProgramTimelineType = {
       programId,
       totalDuration: '6-12 months',
       expectedGrowth: '25-40%',
